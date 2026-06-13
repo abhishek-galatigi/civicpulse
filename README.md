@@ -1,16 +1,66 @@
-# React + Vite
+# 🌆 CivicPulse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AI Powered Smart City Issue Reporting Platform
 
-Currently, two official plugins are available:
+## 🚀 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+CivicPulse is a web-based smart city platform that enables citizens to report civic problems like road damage, garbage overflow, and infrastructure issues.
 
-## React Compiler
+The system uses AI to analyze issue severity and helps authorities prioritize and resolve complaints efficiently.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 📝 Citizen issue reporting
+- 🤖 AI-based severity prediction
+- 📍 Location-based complaint details
+- ⚡ Authority dashboard
+- ✅ Issue status management
+- 📊 Real-time analytics dashboard
+
+
+## 🛠 Tech Stack
+
+Frontend:
+- React.js
+- Vite
+- CSS
+
+Backend:
+- Firebase Firestore
+
+AI:
+- Google Gemini API
+
+Deployment:
+- Firebase Hosting
+
+
+## ⚙️ Working Flow
+
+Citizen
+   ↓
+
+Reports Issue
+   ↓
+
+Gemini AI analyzes severity
+   ↓
+
+Stored in Firebase
+   ↓
+
+Authority manages complaint
+   ↓
+
+Analytics dashboard updates
+
+
+## 🎯 Impact
+
+CivicPulse improves communication between citizens and authorities, enabling faster issue resolution and supporting smarter city management.
+
+
+## 👨‍💻 Developed For
+
+solve society problems as early as possible
