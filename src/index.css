@@ -1,0 +1,35 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Inter,system-ui;
+}
+
+body{
+
+background:
+linear-gradient(
+135deg,
+#020617,
+#0f172a,
+#111827
+);
+
+color:white;
+min-height:100vh;
+
+}
+
+
+a{
+color:white;
+text-decoration:none;
+}
+
+
+button{
+
+cursor:pointer;
+border:none;
+
+}
