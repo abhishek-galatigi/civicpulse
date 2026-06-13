@@ -196,7 +196,35 @@ style={{marginTop:"15px"}}
 
 </p>
 
+{
 
+issue.image &&
+
+<img
+
+src={issue.image}
+
+alt="issue"
+
+style={{
+
+width:"100%",
+
+height:"200px",
+
+objectFit:"cover",
+
+borderRadius:"15px",
+
+marginTop:"20px",
+
+marginBottom:"20px"
+
+}}
+
+/>
+
+}
 
 <h3>
 

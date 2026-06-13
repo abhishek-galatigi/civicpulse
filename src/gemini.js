@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 
 const genAI = new GoogleGenerativeAI(
-"AQ.Ab8RN6JvZUTXN5gCvVSFnexdxEtmDs_0WEFj_8tOCoYozgotCg"
+
 );
 
 

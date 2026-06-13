@@ -12,11 +12,40 @@ function Report(){
 
 const [title,setTitle]=useState("");
 const [description,setDescription]=useState("");
-const [location,setLocation]=useState("");
-
+const [gps,setGps]=useState("");
+const [image,setImage]=useState(null);
 const [loading,setLoading]=useState(false);
 
+function getLocation(){
 
+navigator.geolocation.getCurrentPosition(
+
+(position)=>{
+
+const loc = 
+position.coords.latitude
++
+", "
++
+position.coords.longitude;
+
+
+setGps(loc);
+
+
+alert("Location captured 📍");
+
+},
+
+(error)=>{
+
+alert("Unable to get location");
+
+}
+
+)
+
+}
 
 async function submitIssue(){
 
@@ -29,15 +58,59 @@ setLoading(true);
 const aiSeverity =
 await checkSeverity(description);
 
+let imageUrl="";
 
+
+if(image){
+
+
+const formData = new FormData();
+
+
+formData.append(
+"file",
+image
+);
+
+
+formData.append(
+"upload_preset",
+"civicpulse"
+);
+
+
+
+const response = await fetch(
+
+"https://api.cloudinary.com/v1_1/dkv17d9ke/image/upload",
+
+{
+
+method:"POST",
+
+body:formData
+
+}
+
+);
+
+
+const data =
+await response.json();
+
+
+imageUrl=data.secure_url;
+
+
+}
 
 await addDoc(collection(db,"issues"),{
 
 
 title,
 description,
-location,
-
+location:gps || location,
+image:imageUrl,
 
 status:"Pending",
 
@@ -134,7 +207,13 @@ textAlign:"center"
 
 </h1>
 
+<input
 
+type="file"
+
+onChange={(e)=>setImage(e.target.files[0])}
+
+/>
 
 <input
 
@@ -176,7 +255,26 @@ style={inputStyle}
 
 />
 
+<button
 
+onClick={getLocation}
+
+style={{
+
+width:"100%",
+padding:"15px",
+borderRadius:"15px",
+marginBottom:"15px",
+background:"#0f766e",
+color:"white"
+
+}}
+
+>
+
+📍 Get Current Location
+
+</button>
 
 <button
 
